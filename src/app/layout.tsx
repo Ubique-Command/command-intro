@@ -6,8 +6,8 @@ import { ScrollToTopOnRouteChange } from "@/components/ScrollToTopOnRouteChange"
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IT사역팀 소개",
-  description: "IT사역팀 비전과 팀원 정보를 소개하는 웹사이트입니다.",
+  title: "IT사역팀 - Command",
+  description: "Command 비전과 팀원 정보를 소개하는 웹사이트입니다.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
