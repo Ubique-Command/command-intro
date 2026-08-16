@@ -3,13 +3,13 @@ import Image from "next/image";
 import { Member } from "@/types/member";
 
 export const member: Member = {
-  slug: "zeonzwa",
-  name: "Zeonzwa",
+  slug: "zeonzwa01",
+  name: "박세호",
   role: "IT 사역팀 · Web Learner",
   bio: "새로운 기술을 배우고, 작은 시도를 실제 화면으로 완성해 가는 팀원입니다.",
   image:
     "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85",
-  email: "hello@example.com",
+  email: "zeonzwa01@gmail.com",
   strengths: ["새로운 것 배우기", "문제 끝까지 파고들기", "기록하고 공유하기"],
 };
 
