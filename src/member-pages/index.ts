@@ -7,6 +7,9 @@ import KimHanaPage, {
 import ZeonzwaPage, {
   member as zeonzwaMember,
 } from "@/member-pages/ZeonzwaPage";
+import YoonCho99Page, {
+  member as yoonCho99Member,
+} from "@/member-pages/yoonCho99";
 import { MemberPageModule } from "@/types/member";
 
 /**
@@ -26,6 +29,10 @@ export const memberPageModules: MemberPageModule[] = [
   {
     member: zeonzwaMember,
     Page: ZeonzwaPage,
+  },
+  {
+    member: yoonCho99Member,
+    Page: YoonCho99Page,
   },
 ];
 
