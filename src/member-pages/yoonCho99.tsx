@@ -14,6 +14,7 @@ export const member: Member = {
   role: "백엔드 개발자",
   bio: "부족하지만 잘 부탁드립니다 ㅎㅎ java만 하다가 신기",
   image: "/images/profiles/yooncho99.png",
+  email: "cyk1999@naver.com",
   strengths: ["섬길 수 있는 실용적인 작업", "서로 배려하기", "함께 성장하기"],
 };
 
