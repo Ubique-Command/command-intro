@@ -1,7 +1,15 @@
 import HongGildongPage, {
   member as hongGildongMember,
 } from "@/member-pages/HongGildongPage";
-import KimHanaPage, { member as kimHanaMember } from "@/member-pages/KimHanaPage";
+import KimHanaPage, {
+  member as kimHanaMember,
+} from "@/member-pages/KimHanaPage";
+import LeeJinhyunPage, {
+  member as leeJinhyunMember,
+} from "@/member-pages/LeeJinhyunPage";
+import ZeonzwaPage, {
+  member as zeonzwaMember,
+} from "@/member-pages/ZeonzwaPage";
 import { MemberPageModule } from "@/types/member";
 
 /**
@@ -17,6 +25,14 @@ export const memberPageModules: MemberPageModule[] = [
   {
     member: kimHanaMember,
     Page: KimHanaPage,
+  },
+  {
+    member: zeonzwaMember,
+    Page: ZeonzwaPage,
+  },
+  {
+    member: leeJinhyunMember,
+    Page: LeeJinhyunPage,
   },
 ];
 
