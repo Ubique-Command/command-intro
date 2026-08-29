@@ -6,10 +6,10 @@ export const member: Member = {
   slug: "ko-hyeyeon",
   name: "고혜연",
   role: "UX기획 / PM",
-  bio: "사용자 중심으로 문제를 정의하고 해결하는 기획자입니다.",
+  bio: "사용자 중심으로 문제를 정의하고 해결합니다.",
   image: "/members/hyeyeon/profile.jpeg",
   email: "ebenezerkhy@naver.com",
-  strengths: ["UX", "PM", "문제해결", "🧋"],
+  strengths: ["UX", "정량정성데이터", "문제정의", "사용자중심"],
 };
 
 const Section = ({
@@ -17,36 +17,47 @@ const Section = ({
   label,
   title,
   children,
-  dark = false,
+  tone = "light",
 }: {
   index: string;
   label: string;
   title: string;
   children: React.ReactNode;
-  dark?: boolean;
-}) => (
-  <section
-    className={
-      dark
-        ? "rounded-2xl border border-stone-800 bg-stone-900 px-5 py-6 text-white sm:px-7"
-        : "rounded-2xl border border-stone-200 bg-white px-5 py-6 text-stone-900 sm:px-7"
-    }
-  >
-    <p
-      className={`text-xs font-semibold tracking-wide ${dark ? "text-stone-400" : "text-stone-500"}`}
+  tone?: "light" | "dark" | "beige";
+}) => {
+  const isDark = tone === "dark";
+  const isBeige = tone === "beige";
+
+  return (
+    <section
+      className={
+        isDark
+          ? "rounded-2xl border border-stone-800 bg-stone-900 px-5 py-6 text-white sm:px-7"
+          : isBeige
+            ? "rounded-2xl border border-amber-100 bg-[#fffdf8] px-5 py-6 text-stone-900 sm:px-7"
+            : "rounded-2xl border border-stone-200 bg-white px-5 py-6 text-stone-900 sm:px-7"
+      }
     >
-      {index} · {label}
-    </p>
-    <h2 className="mt-2 text-[17px] font-semibold leading-7 tracking-[-0.015em] sm:text-lg">
-      {title}
-    </h2>
-    <div
-      className={`mt-4 space-y-4 text-[15px] leading-7 sm:text-base ${dark ? "text-stone-200" : "text-stone-700"}`}
-    >
-      {children}
-    </div>
-  </section>
-);
+      <p
+        className={`text-xs font-semibold tracking-wide ${
+          isDark ? "text-stone-400" : isBeige ? "text-stone-500" : "text-stone-500"
+        }`}
+      >
+        {index} · {label}
+      </p>
+      <h2 className="mt-2 text-[17px] font-semibold leading-7 tracking-[-0.015em] sm:text-lg">
+        {title}
+      </h2>
+      <div
+        className={`mt-4 space-y-4 text-[15px] leading-7 sm:text-base ${
+          isDark ? "text-stone-200" : "text-stone-700"
+        }`}
+      >
+        {children}
+      </div>
+    </section>
+  );
+};
 
 export default function KoHyeyeonPage() {
   return (
@@ -55,23 +66,18 @@ export default function KoHyeyeonPage() {
         <section className="grid gap-7 rounded-2xl border border-stone-200 bg-white p-5 sm:p-7 lg:grid-cols-[1.1fr_0.8fr] lg:items-center">
           <div>
             <p className="text-[11px] font-semibold tracking-[0.16em] text-stone-400">
-              UBIQUE COMMAND · MEMBER INTRO
+              UBIQUE COMMAND · MEMBER
             </p>
 
-            <div className="mt-4 flex flex-wrap items-center gap-2.5">
-              <h1 className="text-[22px] font-bold tracking-[-0.025em] sm:text-2xl">
-                고혜연
-              </h1>
-              <span className="rounded-md border border-stone-300 bg-stone-50 px-2.5 py-1 text-sm font-semibold text-stone-600">
-                UX기획 / PM
-              </span>
-            </div>
+            <h1 className="mt-4 text-[38px] font-bold leading-none tracking-[-0.045em] sm:text-[48px]">
+              고혜연
+            </h1>
 
-            <p className="mt-4 max-w-xl text-[16px] font-medium leading-7 text-stone-800 sm:text-[17px]">
-              안녕하세요! <strong>사용자 중심으로 문제를 정의하고 해결하는 기획자</strong> 고혜연입니다 😁
+            <p className="mt-5 max-w-xl text-[21px] font-semibold leading-8 tracking-[-0.025em] text-stone-900 sm:text-[24px] sm:leading-9">
+              사용자 중심으로 문제를 정의하고 해결합니다.
             </p>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-sm text-stone-600">
+            <div className="mt-6 flex flex-col items-start gap-2 text-sm text-stone-600">
               <a
                 href="mailto:ebenezerkhy@naver.com"
                 className="rounded-lg bg-stone-100 px-3 py-2 transition hover:bg-stone-200"
@@ -84,20 +90,37 @@ export default function KoHyeyeonPage() {
               >
                 ☎ 010-5315-3856
               </a>
+              <span className="rounded-lg bg-stone-100 px-3 py-2">
+                🎂 2000.03.20
+              </span>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {member.strengths.map((strength) => (
                 <span
                   key={strength}
-                  className="rounded-full border border-stone-300 bg-white px-3 py-1 text-xs font-medium text-stone-600"
+                  className="rounded-full border border-stone-900 bg-stone-900 px-3 py-1.5 text-xs font-medium text-white"
                 >
                   {strength}
                 </span>
               ))}
             </div>
-          </div>
 
+            <div className="mt-4 flex flex-wrap gap-2">
+              {["여행", "건강", "밀크티", "한정선", "메밀국수", "고기"].map((interest) => (
+                <span
+                  key={interest}
+                  className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-xs font-medium text-amber-900"
+                >
+                  {interest}
+                </span>
+              ))}
+            </div>
+
+            <p className="mt-6 border-t border-stone-200 pt-4 text-[13px] leading-6 text-stone-500">
+              주요 활동 반경은 을지로, 시청, 광화문, 종로인데 가까운 분 계시면 저랑 같이 맛집 뿌셔요
+            </p>
+          </div>
           <div>
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-stone-200 bg-stone-100">
               <Image
@@ -116,7 +139,7 @@ export default function KoHyeyeonPage() {
         </section>
 
         <div className="mt-5 space-y-5">
-          <Section index="0" label="교회 안에서의 나는?" title="B그룹 송미셀 소속이에요 🙌">
+          <Section index="0" label="교회 안에서의 나는?" title="B그룹 송미셀 🙌">
             <p>
               모태신앙으로 어릴 때부터 쭉 교회를 열심히 다녔는데, 고등학교 때 서울에서 일산으로 이사를 오게 되면서 정 붙일 교회를 못 찾고 신앙적으로 살짝 방황했던 시기가 있었어요.
             </p>
@@ -129,7 +152,7 @@ export default function KoHyeyeonPage() {
           </Section>
 
           <Section index="1" label="교회 밖에서의 나는?" title="열심히 일하고 있는 신입사원 🐥">
-            <p>작년에 롯데면세점 이커머스 부문의 UX기획 신입사원으로 입사해서 원하는 일을 하고 있어요.</p>
+            <p>작년에 롯데면세점 사업본부 EC부문의 UX기획 담당으로 입사해서 원하는 일을 재밌게 하고 있어요.</p>
             <p>
               신입이지만 회원 쪽 기능과 공통 영역 기능의 기획을 혼자✌️ 담당하고 있답니다.🐥 (출입국정보, 여권정보, 마이롯데 내의 기능들을 주로 다루고 있어요✈️)
             </p>
@@ -196,7 +219,7 @@ export default function KoHyeyeonPage() {
             index="4"
             label="IT사역에 참여하게 된 이유"
             title="‘내가 하는 일을 통해 하나님의 비전을 이룬다는 건 뭘까?’"
-            dark
+            tone="dark"
           >
             <p>
               사실 일을 열심히는 하지만, 일을 통해 하나님의 비전을 이룬다는 게 어떤 건지 잘 와닿지 않았던 순간들이 많았던 것 같아요.
@@ -223,7 +246,7 @@ export default function KoHyeyeonPage() {
             </p>
           </Section>
 
-          <Section index="5" label="기대하는 것" title="무엇을 만드느냐만큼, 어떻게 함께하느냐 🤝">
+          <Section index="5" label="기대하는 것" title="무엇을 만드느냐만큼, 어떻게 함께하느냐 🤝" tone="beige">
             <p>
               사실 서비스를 오픈하는 것도 의미가 있고 기대가 되지만, 어쩌면 그것보다 이 공동체를 통해 같은 직군 종사자로서 서로의 신앙적 고민들을 나누고 함께 중보하는 과정들이 더 귀할 수 있을 거라고도 생각해요.
             </p>
@@ -244,6 +267,82 @@ export default function KoHyeyeonPage() {
                 className="h-auto w-full max-w-xl rounded-xl border border-stone-200"
               />
             </div>
+          </Section>
+
+          <Section
+            index="ETC"
+            label="지난 사부작사부작.."
+            title="서버종료를 면치 못했던 경험들🤦🏻‍♀️"
+          >
+            <p>
+              열심히 잘 만들어도 유저를 모으는 건 뭔가 다른 차원의 것인 느낌...이더라구요?
+              <br />
+              사이드프로젝트로 실유저를 많이 확보해본 경험은 없어서 🥹
+              <br />
+              0부터 1까지 직접 만든 서비스에 유저들이 모이고 잘 굴러가는 걸 너무 보고 싶어요.. 진짜 유용하게 사용되는 걸 보면 너무 짜릿할 것 같아요.{" "}
+              <strong className="font-semibold text-stone-950">(유비크는 다 가입해줘~)</strong>
+            </p>
+            <p>
+              만드는 내내 유저가 거의 없었음에도 불구하고.. 같이 만들어나가는 과정 자체가 너무 재밌어서 1년 넘게 기능도 계속 새로 만들고 고도화하기도 했었는데요,
+              <br />
+              저희도 서로 단합이 잘 돼서 지치지 않고 즐겁게 한 마음 한 뜻으로 오래 사역하는 팀이 되면 좋겠어요🙏🏻
+            </p>
+
+            <div className="grid gap-3 pt-2 sm:grid-cols-2">
+              <article className="rounded-xl border border-stone-200 bg-stone-50 p-4">
+                <h3 className="text-[17px] font-semibold text-stone-900">PEERNA</h3>
+                <p className="mt-2 text-sm leading-6 text-stone-600">
+                  실제 동아리 내에서 발생하는 문제를 해결해보고 싶어서 만들었던 프로덕트.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.peerna"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg bg-stone-900 px-3 py-2 text-xs font-medium text-white transition hover:bg-stone-700"
+                  >
+                    Google Play
+                  </a>
+                  <a
+                    href="https://disquiet.io/products/peer-na"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700 transition hover:bg-stone-100"
+                  >
+                    Disquiet
+                  </a>
+                </div>
+              </article>
+
+              <article className="rounded-xl border border-stone-200 bg-stone-50 p-4">
+                <h3 className="text-[17px] font-semibold text-stone-900">WESPOT</h3>
+                <p className="mt-2 text-sm leading-6 text-stone-600">
+                  초중딩들의 도파민을 자극해라도.. 어떻게든 유저를 많이 모아보고 싶어서 만들었던 프로덕트.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.bff.wespot.real"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg bg-stone-900 px-3 py-2 text-xs font-medium text-white transition hover:bg-stone-700"
+                  >
+                    Google Play
+                  </a>
+                  <a
+                    href="https://disquiet.io/products/we-spot"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-xs font-medium text-stone-700 transition hover:bg-stone-100"
+                  >
+                    Disquiet
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <p className="border-t border-stone-200 pt-4 text-center text-[11px] leading-5 text-stone-400">
+              MBTI는 적으려다가 말았는데 한 번 맞춰보세요.
+            </p>
           </Section>
         </div>
       </div>
