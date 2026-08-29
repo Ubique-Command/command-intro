@@ -110,7 +110,7 @@ export default function KoHyeyeonPage() {
               {["여행", "건강", "밀크티", "한정선", "메밀국수", "고기"].map((interest) => (
                 <span
                   key={interest}
-                  className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-xs font-medium text-amber-900"
+                  className="rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-800"
                 >
                   {interest}
                 </span>
@@ -279,13 +279,9 @@ export default function KoHyeyeonPage() {
               <br />
               사이드프로젝트로 실유저를 많이 확보해본 경험은 없어서 🥹
               <br />
-              0부터 1까지 직접 만든 서비스에 유저들이 모이고 잘 굴러가는 걸 너무 보고 싶어요.. 진짜 유용하게 사용되는 걸 보면 너무 짜릿할 것 같아요.{" "}
-              <strong className="font-semibold text-stone-950">(유비크는 다 가입해줘~)</strong>
-            </p>
-            <p>
-              만드는 내내 유저가 거의 없었음에도 불구하고.. 같이 만들어나가는 과정 자체가 너무 재밌어서 1년 넘게 기능도 계속 새로 만들고 고도화하기도 했었는데요,
+              0부터 1까지 직접 만든 서비스에 유저들이 모이고 잘 굴러가는 걸 너무 보고 싶어요.. 진짜 유용하게 사용되는 걸 보면 너무 짜릿할 것 같아요.
               <br />
-              저희도 서로 단합이 잘 돼서 지치지 않고 즐겁게 한 마음 한 뜻으로 오래 사역하는 팀이 되면 좋겠어요🙏🏻
+              <strong className="font-semibold text-stone-950">(유비크는 다 가입해줘~)</strong>
             </p>
 
             <div className="grid gap-3 pt-2 sm:grid-cols-2">
