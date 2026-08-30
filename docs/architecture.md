@@ -30,7 +30,7 @@ src/
     members.ts
   member-pages/
     HongGildongPage.tsx
-    KimHanaPage.tsx
+    ShinHayeongPage.tsx
     LeeJunePage.tsx
     ParkSomangPage.tsx
     index.ts

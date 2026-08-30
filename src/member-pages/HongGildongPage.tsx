@@ -73,7 +73,7 @@ export default function HongGildongPage() {
 
             <div className="overflow-x-auto px-4 py-6 font-mono text-sm leading-7">
               <CodeLine n={1}>
-                <span className={comment}>// {member.bio}</span>
+                <span className={comment}>{"// "}{member.bio}</span>
               </CodeLine>
               <CodeLine n={2}>
                 <span className={kw}>const</span> member ={" "}
