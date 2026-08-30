@@ -4,67 +4,124 @@ import { Member } from "@/types/member";
 
 export const member: Member = {
   slug: "hong-gildong",
-  name: "홍길동",
-  role: "팀 리드 / 제품 기획",
+  name: "고정훈",
+  role: "사역팀 팀장 / 제품 기획",
   bio: "사역 목표를 디지털 서비스 구조로 연결하고 팀의 우선순위를 조율합니다.",
-  image:
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
-  email: "gildong@example.com",
+  image: "/members/gojeonghoon.jpg",
+  email: "jeonghoonko@upstage.ai",
   strengths: ["로드맵 수립", "조직 커뮤니케이션", "서비스 기획"],
 };
 
+function CodeLine({
+  n,
+  children,
+}: {
+  n: number;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex">
+      <span className="w-8 shrink-0 select-none pr-4 text-right text-stone-600">
+        {n}
+      </span>
+      <span className="whitespace-pre-wrap break-all">{children}</span>
+    </div>
+  );
+}
+
+const kw = "text-fuchsia-400";
+const key = "text-sky-400";
+const str = "text-emerald-400";
+const punct = "text-stone-500";
+const comment = "text-stone-500 italic";
+
 export default function HongGildongPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-stone-950 text-white">
       <section className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-10 lg:px-12">
-        <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-slate-100">
-            <Image
-              src={member.image}
-              alt={`${member.name} 프로필 이미지`}
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              priority
-            />
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d1117] shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+            <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
+              <span className="h-3 w-3 rounded-full bg-red-500/80" />
+              <span className="h-3 w-3 rounded-full bg-amber-400/80" />
+              <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
+              <span className="ml-3 font-mono text-xs text-stone-400">
+                profile.jpg
+              </span>
+            </div>
+            <div className="relative aspect-[4/5] bg-stone-900">
+              <Image
+                src={member.image}
+                alt={`${member.name} 프로필 이미지`}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                priority
+              />
+            </div>
           </div>
 
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-              Team Lead
-            </p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950">
-              {member.name}
-            </h1>
-            <p className="mt-3 text-xl text-slate-700">{member.role}</p>
-            <p className="mt-6 text-base leading-7 text-slate-600">
-              제품 방향과 사역 현장의 요구를 연결해 팀이 어디에 집중해야 하는지
-              정리합니다. 새로운 기능보다 실제 운영에 필요한 흐름을 먼저
-              구조화하고, 팀이 작게 만들고 빠르게 검증할 수 있도록 기준을
-              세웁니다.
-            </p>
-
-            <div className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
-                Contact
-              </h2>
-              <p className="mt-3 text-base text-slate-900">{member.email}</p>
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d1117] shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+            <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
+              <span className="h-3 w-3 rounded-full bg-red-500/80" />
+              <span className="h-3 w-3 rounded-full bg-amber-400/80" />
+              <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
+              <span className="ml-3 font-mono text-xs text-stone-400">
+                {member.slug}.ts
+              </span>
             </div>
 
-            <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
-                Focus
-              </h2>
-              <ul className="mt-4 flex flex-wrap gap-3">
-                {member.strengths.map((strength) => (
-                  <li
-                    key={strength}
-                    className="rounded-full bg-slate-950 px-4 py-2 text-sm font-medium text-white"
-                  >
-                    {strength}
-                  </li>
-                ))}
-              </ul>
+            <div className="overflow-x-auto px-4 py-6 font-mono text-sm leading-7">
+              <CodeLine n={1}>
+                <span className={comment}>{"// "}{member.bio}</span>
+              </CodeLine>
+              <CodeLine n={2}>
+                <span className={kw}>const</span> member ={" "}
+                <span className={punct}>{"{"}</span>
+              </CodeLine>
+              <CodeLine n={3}>
+                {"  "}
+                <span className={key}>name</span>
+                <span className={punct}>:</span>{" "}
+                <span className={str}>&quot;{member.name}&quot;</span>
+                <span className={punct}>,</span>
+              </CodeLine>
+              <CodeLine n={4}>
+                {"  "}
+                <span className={key}>role</span>
+                <span className={punct}>:</span>{" "}
+                <span className={str}>&quot;{member.role}&quot;</span>
+                <span className={punct}>,</span>
+              </CodeLine>
+              <CodeLine n={5}>
+                {"  "}
+                <span className={key}>focus</span>
+                <span className={punct}>:</span>{" "}
+                <span className={punct}>[</span>
+              </CodeLine>
+              {member.strengths.map((strength, index) => (
+                <CodeLine n={6 + index} key={strength}>
+                  {"    "}
+                  <span className={str}>&quot;{strength}&quot;</span>
+                  <span className={punct}>,</span>
+                </CodeLine>
+              ))}
+              <CodeLine n={6 + member.strengths.length}>
+                {"  "}
+                <span className={punct}>]</span>
+                <span className={punct}>,</span>
+              </CodeLine>
+              <CodeLine n={7 + member.strengths.length}>
+                {"  "}
+                <span className={key}>contact</span>
+                <span className={punct}>:</span>{" "}
+                <span className={str}>&quot;{member.email}&quot;</span>
+                <span className={punct}>,</span>
+              </CodeLine>
+              <CodeLine n={8 + member.strengths.length}>
+                <span className={punct}>{"};"}</span>
+                <span className="ml-1 inline-block h-4 w-2 animate-pulse bg-amber-300 align-middle" />
+              </CodeLine>
             </div>
           </div>
         </div>

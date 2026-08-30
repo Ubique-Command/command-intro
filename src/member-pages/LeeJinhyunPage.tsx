@@ -3,17 +3,17 @@ import Image from "next/image";
 import { Member } from "@/types/member";
 
 export const member: Member = {
-  slug: "kim-hana",
-  name: "김하나",
-  role: "프론트엔드 개발",
-  bio: "팀 사이트와 내부 도구의 사용자 경험을 설계하고 구현합니다.",
+  slug: "lee-jinhyun",
+  name: "이진현",
+  role: "채린셀 · PM",
+  bio: "혼란스러운 세상 속에서 하나님의 뜻으로 중심을 세우는 제품을 만들고 있습니다.",
   image:
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80",
-  email: "hana@example.com",
-  strengths: ["Next.js", "디자인 시스템", "접근성"],
+    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85",
+  email: "leejinhyun327@gmail.com",
+  strengths: ["기획", "운영", "커뮤니케이션"],
 };
 
-export default function KimHanaPage() {
+export default function LeeJinhyunPage() {
   return (
     <main className="min-h-screen bg-white">
       <section className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-10 lg:px-12">
@@ -31,20 +31,27 @@ export default function KimHanaPage() {
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-              Frontend
+              채린셀
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950">
               {member.name}
             </h1>
             <p className="mt-3 text-xl text-slate-700">{member.role}</p>
             <p className="mt-6 text-base leading-7 text-slate-600">
-              팀이 만드는 화면이 처음 접하는 사용자에게도 어렵지 않도록
-              설계합니다. 디자인보다 사용 흐름을 먼저 다듬고, 반복되는 UI는
-              단순한 규칙으로 정리해 비전공자도 에이전트와 함께 수정할 수 있게
-              만듭니다.
+              {member.bio}
             </p>
 
             <div className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
+                What I do
+              </h2>
+              <p className="mt-3 text-base leading-7 text-slate-900">
+                디자인과 개발을 제외한 나머지 대부분을 맡아, 제품이 아이디어에서
+                실제 서비스가 되기까지의 흐름을 책임집니다.
+              </p>
+            </div>
+
+            <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6">
               <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
                 Contact
               </h2>

@@ -1,15 +1,21 @@
 import HongGildongPage, {
   member as hongGildongMember,
 } from "@/member-pages/HongGildongPage";
-import KimHanaPage, {
-  member as kimHanaMember,
-} from "@/member-pages/KimHanaPage";
+import ShinHayeongPage, {
+  member as shinHayeongMember,
+} from "@/member-pages/ShinHayeongPage";
+import LeeJinhyunPage, {
+  member as leeJinhyunMember,
+} from "@/member-pages/LeeJinhyunPage";
 import ZeonzwaPage, {
   member as zeonzwaMember,
 } from "@/member-pages/ZeonzwaPage";
 import SuhJiminMemeber, {
   member as suhJiminMemeber,
 } from "@/member-pages/SuhJiminPage";
+import KoHyeyeonPage, {
+  member as koHyeyeonMember,
+} from "@/member-pages/KoHyeyeonPage";
 import { MemberPageModule } from "@/types/member";
 
 /**
@@ -23,8 +29,8 @@ export const memberPageModules: MemberPageModule[] = [
     Page: HongGildongPage,
   },
   {
-    member: kimHanaMember,
-    Page: KimHanaPage,
+    member: shinHayeongMember,
+    Page: ShinHayeongPage,
   },
   {
     member: zeonzwaMember,
@@ -33,6 +39,12 @@ export const memberPageModules: MemberPageModule[] = [
   {
     member: suhJiminMemeber,
     Page: SuhJiminMemeber,
+    member: leeJinhyunMember,
+    Page: LeeJinhyunPage,
+  },
+  {
+    member: koHyeyeonMember,
+    Page: KoHyeyeonPage,
   },
 ];
 
