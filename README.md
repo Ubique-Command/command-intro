@@ -137,7 +137,7 @@ src/
     members.ts
   member-pages/
     HongGildongPage.tsx
-    KimHanaPage.tsx
+    ShinHayeongPage.tsx
     index.ts
   types/
     member.ts
@@ -196,7 +196,7 @@ src/
 예시:
 
 - `src/member-pages/HongGildongPage.tsx`
-- `src/member-pages/KimHanaPage.tsx`
+- `src/member-pages/ShinHayeongPage.tsx`
 
 즉, 비전공자 팀원은 복잡한 라우팅 파일을 건드리지 않고 자기 소개 페이지 파일 하나만 수정해도 됩니다.
 
