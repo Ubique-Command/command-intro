@@ -10,9 +10,6 @@ import LeeJinhyunPage, {
 import ZeonzwaPage, {
   member as zeonzwaMember,
 } from "@/member-pages/ZeonzwaPage";
-import SuhJiminMemeber, {
-  member as suhJiminMemeber,
-} from "@/member-pages/SuhJiminPage";
 import KoHyeyeonPage, {
   member as koHyeyeonMember,
 } from "@/member-pages/KoHyeyeonPage";
@@ -37,8 +34,6 @@ export const memberPageModules: MemberPageModule[] = [
     Page: ZeonzwaPage,
   },
   {
-    member: suhJiminMemeber,
-    Page: SuhJiminMemeber,
     member: leeJinhyunMember,
     Page: LeeJinhyunPage,
   },
