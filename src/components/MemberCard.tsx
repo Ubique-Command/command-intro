@@ -40,7 +40,7 @@ export function MemberCard({ member, index }: MemberCardProps) {
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-stone-950">
           {member.name}
         </h2>
-        <p className="mt-4 line-clamp-3 text-sm leading-7 text-stone-600">
+        <p className="mt-4 line-clamp-3 whitespace-pre-line text-sm leading-7 text-stone-600">
           {member.bio}
         </p>
         <div className="mt-6 flex items-center justify-between border-t border-stone-200 pt-4">
