@@ -317,20 +317,20 @@ export const memberPageModules: MemberPageModule[] = [
 
 현재 프로젝트 규칙:
 
-| 대상 | 규칙 |
-| --- | --- |
-| 폴더 | `kebab-case` |
-| React 컴포넌트 | `PascalCase.tsx` |
-| 일반 TS 파일 | `kebab-case.ts` |
-| 커스텀 훅 | `use-*.ts` |
-| 함수·변수 | `camelCase` |
-| 타입·인터페이스 | `PascalCase` |
-| 상수 | `UPPER_SNAKE_CASE` |
-| 라우트 | `kebab-case` |
-| Next 특수 파일 | `page.tsx`, `layout.tsx` 등 공식 이름 유지 |
-| 테스트 | `*.test.ts(x)` |
-| 스토리 | `*.stories.tsx` |
-| CSS Module | `ComponentName.module.css` |
+| 대상            | 규칙                                       |
+| --------------- | ------------------------------------------ |
+| 폴더            | `kebab-case`                               |
+| React 컴포넌트  | `PascalCase.tsx`                           |
+| 일반 TS 파일    | `kebab-case.ts`                            |
+| 커스텀 훅       | `use-*.ts`                                 |
+| 함수·변수       | `camelCase`                                |
+| 타입·인터페이스 | `PascalCase`                               |
+| 상수            | `UPPER_SNAKE_CASE`                         |
+| 라우트          | `kebab-case`                               |
+| Next 특수 파일  | `page.tsx`, `layout.tsx` 등 공식 이름 유지 |
+| 테스트          | `*.test.ts(x)`                             |
+| 스토리          | `*.stories.tsx`                            |
+| CSS Module      | `ComponentName.module.css`                 |
 
 ## 자주 쓰는 명령어
 

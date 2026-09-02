@@ -16,6 +16,9 @@ import KoHyeyeonPage, {
 import SuhJiminMemeber, {
   member as suhJiminMemeber,
 } from "@/member-pages/SuhJiminPage";
+import KimDohoonMemeber, {
+  member as kimdohoonMemeber,
+} from "@/member-pages/KimDohoonPage";
 import { MemberPageModule } from "@/types/member";
 
 /**
@@ -47,6 +50,10 @@ export const memberPageModules: MemberPageModule[] = [
   {
     member: suhJiminMemeber,
     Page: SuhJiminMemeber,
+  },
+  {
+    member: kimdohoonMemeber,
+    Page: KimDohoonMemeber,
   },
 ];
 
