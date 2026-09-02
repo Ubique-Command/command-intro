@@ -12,13 +12,7 @@ export const member: Member = {
   strengths: ["로드맵 수립", "조직 커뮤니케이션", "서비스 기획"],
 };
 
-function CodeLine({
-  n,
-  children,
-}: {
-  n: number;
-  children: React.ReactNode;
-}) {
+function CodeLine({ n, children }: { n: number; children: React.ReactNode }) {
   return (
     <div className="flex">
       <span className="w-8 shrink-0 select-none pr-4 text-right text-stone-600">
@@ -73,7 +67,10 @@ export default function HongGildongPage() {
 
             <div className="overflow-x-auto px-4 py-6 font-mono text-sm leading-7">
               <CodeLine n={1}>
-                <span className={comment}>{"// "}{member.bio}</span>
+                <span className={comment}>
+                  {"// "}
+                  {member.bio}
+                </span>
               </CodeLine>
               <CodeLine n={2}>
                 <span className={kw}>const</span> member ={" "}
