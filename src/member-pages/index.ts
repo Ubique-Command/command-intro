@@ -1,3 +1,6 @@
+import LimHyeongmukPage, {
+  member as limHyeongmukMember,
+} from "@/member-pages/LimHyeongmukPage";
 import HongGildongPage, {
   member as hongGildongMember,
 } from "@/member-pages/HongGildongPage";
@@ -19,6 +22,7 @@ import SuhJiminMemeber, {
 import KimDohoonMemeber, {
   member as kimdohoonMemeber,
 } from "@/member-pages/KimDohoonPage";
+
 import { MemberPageModule } from "@/types/member";
 
 /**
@@ -54,6 +58,10 @@ export const memberPageModules: MemberPageModule[] = [
   {
     member: kimdohoonMemeber,
     Page: KimDohoonMemeber,
+  },
+  {
+    member: limHyeongmukMember,
+    Page: LimHyeongmukPage,
   },
 ];
 
