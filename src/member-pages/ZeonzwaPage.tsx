@@ -13,133 +13,73 @@ export const member: Member = {
   strengths: ["새로운 것 배우기", "문제 끝까지 파고들기", "기록하고 공유하기"],
 };
 
-const profileNotes = [
-  {
-    number: "01",
-    title: "Learn",
-    description:
-      "모르는 것을 숙제로 남겨두기보다, 작게라도 직접 만들며 배웁니다.",
-  },
-  {
-    number: "02",
-    title: "Build",
-    description:
-      "아이디어가 사람이 실제로 사용할 수 있는 화면이 되는 과정을 좋아합니다.",
-  },
-  {
-    number: "03",
-    title: "Share",
-    description:
-      "배운 것과 막힌 지점을 기록해 다음 사람의 시작을 좀 더 쉽게 만듭니다.",
-  },
-];
-
 export default function ZeonzwaPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-stone-950 text-stone-100">
-      <section className="relative mx-auto w-full max-w-7xl px-6 py-14 sm:px-10 sm:py-20 lg:px-12 lg:py-24">
-        <div
-          aria-hidden="true"
-          className="absolute -right-48 top-16 h-96 w-96 rounded-full bg-amber-400/15 blur-3xl"
-        />
-        <div className="relative grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+    <main className="min-h-screen bg-white">
+      <section className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-10 lg:px-12">
+        <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-amber-50">
+            <Image
+              src={member.image}
+              alt="노트북과 디지털 작업 환경"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              preload
+            />
+          </div>
+
           <div>
-            <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.3em] text-amber-300">
-              <span className="h-px w-10 bg-amber-300" />
-              Sample profile
-            </div>
-
-            <h1 className="mt-8 max-w-3xl text-5xl font-semibold leading-[1.08] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
-              배운 것을,
-              <br />
-              <span className="text-amber-300">실제 화면으로.</span>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-600">
+              IT사역팀
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950">
+              {member.name}
             </h1>
-
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-stone-300 sm:text-xl">
-              안녕하세요, {member.name}입니다. 새로운 기술을 배우고 직접 만들어
-              보며 이해하는 과정을 좋아합니다. 작은 아이디어도 눈에 보이는
-              결과물로 옮기고, 그 과정을 팀과 함께 나누고 싶습니다.
+            <p className="mt-3 text-xl text-slate-700">{member.role}</p>
+            <p className="mt-6 text-base leading-7 text-slate-600">
+              {member.bio}
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-8 rounded-3xl border border-amber-200 bg-amber-50/60 p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
+                Role
+              </h2>
+              <p className="mt-3 text-base leading-7 text-slate-900">
+                새로운 기술을 배우고 직접 만들어 보며 이해하는 과정을 좋아합니다.
+                작은 아이디어도 눈에 보이는 결과물로 옮기고, 배운 것과 막힌
+                지점을 기록해 팀과 함께 나누고 싶습니다.
+              </p>
+            </div>
+
+            <div className="mt-6 rounded-3xl border border-amber-200 bg-amber-50/60 p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
+                Contact
+              </h2>
               <a
                 href={`mailto:${member.email}`}
-                className="rounded-full bg-amber-300 px-6 py-3 text-sm font-semibold text-stone-950 transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300"
+                className="mt-3 inline-block break-all text-base text-slate-900 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
               >
-                메일로 인사하기
+                {member.email}
               </a>
-              <p className="text-sm text-stone-400">{member.email}</p>
+            </div>
+
+            <div className="mt-6 rounded-3xl border border-amber-200 bg-amber-50/60 p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
+                Focus
+              </h2>
+              <ul className="mt-4 flex flex-wrap gap-3">
+                {member.strengths.map((strength) => (
+                  <li
+                    key={strength}
+                    className="rounded-full bg-amber-600 px-4 py-2 text-sm font-medium text-white"
+                  >
+                    {strength}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-            <div className="absolute -left-5 -top-5 h-full w-full rounded-[2rem] border border-amber-300/40" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-stone-800">
-              <Image
-                src={member.image}
-                alt="노트북과 디지털 작업 환경"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 38vw, 100vw"
-                preload
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-300">
-                  {member.role}
-                </p>
-                <p className="mt-3 text-3xl font-semibold text-white">
-                  {member.name}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.03]">
-        <div className="mx-auto grid w-full max-w-7xl divide-y divide-white/10 px-6 sm:px-10 lg:grid-cols-3 lg:divide-x lg:divide-y-0 lg:px-12">
-          {profileNotes.map((note) => (
-            <article className="py-10 lg:px-8 lg:py-14" key={note.number}>
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-semibold text-white">
-                  {note.title}
-                </h2>
-                <span className="font-mono text-sm text-amber-300">
-                  / {note.number}
-                </span>
-              </div>
-              <p className="mt-5 max-w-sm text-sm leading-7 text-stone-400">
-                {note.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-24">
-        <div className="grid gap-10 rounded-[2rem] bg-amber-300 p-8 text-stone-950 sm:p-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em]">
-              My strengths
-            </p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-              함께 만들며
-              <br />
-              성장합니다.
-            </h2>
-          </div>
-          <ul className="grid gap-3 sm:grid-cols-3">
-            {member.strengths.map((strength, index) => (
-              <li
-                key={strength}
-                className="flex min-h-32 flex-col justify-between rounded-2xl border border-stone-950/20 bg-white/30 p-5"
-              >
-                <span className="font-mono text-xs">0{index + 1}</span>
-                <span className="text-base font-semibold">{strength}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
     </main>
